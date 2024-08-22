@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="i2c-dev", ATTR{device/of_node/i2c-chardev-alias}!="", SYMLINK+="i2c-%s{device/of_node/i2c-chardev-alias}"

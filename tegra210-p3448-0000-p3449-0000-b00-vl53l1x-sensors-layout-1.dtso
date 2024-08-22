@@ -1,0 +1,115 @@
+/dts-v1/;
+/plugin/;
+
+
+/ {
+        compatible = "nvidia,p3449-0000-b00+p3448-0000-b00";
+
+        fragment@0 {
+                target = <&hdr40_i2c0>;
+                
+                __overlay__ {
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+
+                        i2c-mux@70 {
+                                compatible = "nxp,pca9548";
+                                reg = <0x70>;
+                                vcc-supply = <&hdr40_vdd_3v3>;
+                                vcc-pullup-supply = <&hdr40_vdd_3v3>;
+                                skip_mux_detect;
+                                #address-cells = <1>;
+                                #size-cells = <0>;
+
+                                i2c@0 {
+                                        reg = <0>;
+                                        i2c-chardev-alias = "laser-0";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@1 {
+                                        reg = <1>;
+                                        i2c-chardev-alias = "laser-1";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@2 {
+                                        reg = <2>;
+                                        i2c-chardev-alias = "laser-2";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@3 {
+                                        reg = <3>;
+                                        i2c-chardev-alias = "laser-3";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@4 {
+                                        reg = <4>;
+                                        i2c-chardev-alias = "laser-4";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                        };
+                };
+        };
+
+        fragment@1 {
+                target = <&hdr40_i2c1>;
+                
+                __overlay__ {
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+
+                        i2c-mux@70 {
+                                compatible = "nxp,pca9548";
+                                reg = <0x70>;
+                                vcc-supply = <&hdr40_vdd_3v3>;
+                                vcc-pullup-supply = <&hdr40_vdd_3v3>;
+                                skip_mux_detect;                                
+                                #address-cells = <1>;
+                                #size-cells = <0>;
+
+                                i2c@0 {
+                                        reg = <0>;
+                                        i2c-chardev-alias = "laser-5";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@1 {
+                                        reg = <1>;
+                                        i2c-chardev-alias = "laser-6";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@2 {
+                                        reg = <2>;
+                                        i2c-chardev-alias = "laser-7";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@3 {
+                                        reg = <3>;
+                                        i2c-chardev-alias = "laser-8";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                                
+                                i2c@4 {
+                                        reg = <4>;
+                                        i2c-chardev-alias = "laser-9";
+                                        #address-cells = <1>;
+                                        #size-cells = <0>;
+                                };
+                        };
+                };
+        };
+};
